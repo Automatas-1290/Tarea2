@@ -30,21 +30,23 @@ public class Principal {
         String replace2 = textoAlfanumerico.replaceAll(patronB, "X");
         System.out.println("Reemplazo de Letras con X: " + replace2);
 
+
+        System.out.println("________________________________________\n");
+        System.out.println("              EJEMPLO #2");
+        System.out.println("________________________________________\n");
+        
         // [0-5][a-c];
         // String patronComplejo = patronA + patronB;
 
         // [a-c]*[0-5]*
-        // String patronComplejo = patronA + "*" + patronB + "*";
+        //String patronComplejo = patronA + "*" + patronB + "*";
 
         // "[a-z]+"
 
         // + = una coincidencia
         // * = ninguna o muchas
 
-        //String patronComplejo = "(" + patronA + patronC + ")+";
-        System.out.println("________________________________________\n");
-        System.out.println("              EJEMPLO #2");
-        System.out.println("________________________________________\n");
+        //String patronComplejo = "(" + patronA + patronC + ")+";        
         
         String patronComplejo = "(" + patronC + ")+";
 
@@ -64,9 +66,9 @@ public class Principal {
         System.out.println("             EXPRESION #1");
         System.out.println("________________________________________\n");
         
-        String patronComplejo1 = "[ba]+("+"[a-z]*)+";
+        String patronComplejo1 = "[a-z]*(ba)[a-z]+";
 
-        String cadena1 = "350 wenas, holu atol barco basurero mantequilla esta hola es mi 1010 00145";
+        String cadena1 = "350 wenas hola acabar barco basurero sobas balareria esta hola es mi 1010 00145";
         
         System.out.println("Patron Complejo: " + patronComplejo1);
         System.out.println(cadena1);
