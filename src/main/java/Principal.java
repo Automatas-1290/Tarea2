@@ -66,9 +66,10 @@ public class Principal {
         System.out.println("             EXPRESION #1");
         System.out.println("________________________________________\n");
         
-        String patronComplejo1 = "[a-z]*(ba)[a-z]+";
+        String patronComplejo1 = "[a-z0-9]*(ba)+[a-z0-9]*";
+        //String patronComplejo1 = "(ba)";
 
-        String cadena1 = "350 wenas hola acabar barco basurero sobas balareria esta hola es mi 1010 00145";
+        String cadena1 = "350 wenas hola acabaras barco basurero sobas balareria esta hola es mi 1010 00145";
         
         System.out.println("Patron Complejo: " + patronComplejo1);
         System.out.println(cadena1);
@@ -80,5 +81,27 @@ public class Principal {
         while(matcher1.find()) {
             System.out.println("Encontrado: " + matcher1.group());
         }
+        
+        System.out.println("________________________________________\n");
+        System.out.println("             EXPRESION #2");
+        System.out.println("________________________________________\n");
+        
+        //String patronComplejo2 =  "([^([a-z0-9].*(bc)[a-z0-9].*)])";
+        String patronComplejo2 = "[^[a-z0-9]*bc+[a-z0-9]*]";
+
+        String cadena2 = "abceso abcesino alabara ola bceso 1010 350 666";
+        
+        System.out.println("Patron Complejo: " + patronComplejo2);
+        System.out.println(cadena2);
+
+        Pattern pattern2 = Pattern.compile(patronComplejo2);
+        Matcher matcher2 = pattern2.matcher(cadena2);
+     
+        // Buscar Ocurrencias
+        while(matcher2.find()) {
+            System.out.println("Encontrado: " + matcher2.group());
+        }
+
+
     }
 }
